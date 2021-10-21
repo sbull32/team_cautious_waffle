@@ -14,7 +14,7 @@ Python 3.7.10, pgAdmin 4
 ## Procedure(tentative)
 - Data selection from [Sportsipy](https://github.com/roclark/sportsipy).
 - Data processing:
-  - Segregate raw NFL data by week, by player in columns that align with DraftKings scoring (features).
+  - Segregate raw NFL data by week, by player, by position in columns that align with DraftKings scoring (features).
   - Apply machine learing model to predict NFL data for each eligible NFL player.
   - Convert raw NFL data into fantasy points.
   - Utilizing DraftKings roster requirements, calculate an optimal lineup for a given week (the Excel Sovler tool can be used as an example).
