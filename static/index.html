@@ -1,1 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>UFO Factsheet</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
+    <body class="bg-dark">
+        <div class="wrapper">
+                <nav class="navbar navbar-expand-lg">
+                   <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+                    <a class="navbar-brand" href="index.html">Final Project</a>
+                  </nav>
+            </nav>
+        </div>
+
+        <div class="jumbotron">
+          <h1 class="display-4">Fantasy Sports Lineup Predictions</h1>
+        </div>
+
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+            <h3>Contributors <small>Jabari Tucker, Alex Guenther, Sean Bull, Taryn Syler, and Nic Brownrigg</small></h3>
+          </div>
+          <div>
+            <h3>
+            Methodology
+            </h3>
+          </div>
+          <div class="col-md-8">
+            <p>
+             *PLACEHOLDER* 
+
+
+            </p>
+          </div>
+        </div>
+      </div>
+
+    
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="filters">
+            <form class="bg-dark">
+              <div class="form-group">
+                  <p>Filter Search</p>
+                  <ul class="list-group">
+                    <li class="list-group-item bg-dark">
+                      <label for="state">Enter Week</label>
+                      <input type="text" placeholder="Enter Week" id="week_id" />
+                    </li>
+                    <li class="list-group-item bg-dark">
+                        <label for="date">Enter Team</label>
+                        <input type="text" placeholder="Enter NFL Team" id="team_id" />
+                      </li>
+                    <li class="list-group-item bg-dark">
+                        <label for="city">Enter Player Name</label>
+                        <input type="text" placeholder="Enter Player Name" id="player_name" />
+                      </li>
+                    <li class="list-group-item bg-dark">
+                        <label for="country">Enter Position</label>
+                        <input type="text" placeholder="Country" id="country" />
+                      </li>
+                    <li class="list-group-item bg-dark">
+                        <label for="shape">Enter Current Points Required</label>
+                        <input type="text" placeholder="Enter Points Amount" id="current_points" />
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+            </div>
+        
+        <div class="col-md-9">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                
+                    <th>Week</th>
+                    <th>Team</th>
+                    <th>Player Name</th>
+                    <th>Position</th>
+                    <th>Current Points</th>
+                    <th>*DATAPOINTS NEEDED*</th>
+                    <th>Forecasted Points</th>
+                
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+      </div>
+    </div>
+  </div>
+        <script src="js/data.js"></script>
+        <script src="js/model.js"></script> 
+    
+</body>
+</html>
