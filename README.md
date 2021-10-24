@@ -21,3 +21,10 @@ Python 3.7.10, pgAdmin 4
 - Data transformation:
   - Store dataframes in a database (postgres).
   - Create dashboard to request and visualize data.    
+
+# Github will be Team_Cautious_Waffles version control.
+
+This repository will be hosted on Github and will need to be able to read/write between team members.
+*	standard HTTPS ports and can using HTTP authentication mechanisms, things like username/password authentication rather than having to set up SSH keys.
+
+* URL based protocol will be used to clone, access, push over Git
