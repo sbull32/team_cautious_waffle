@@ -30,8 +30,14 @@ This repository will be hosted on Github and will need to be able to read/write 
 
 * URL based protocol will be used to clone, access, push over Git
 
-# Advantages of using HTTPS protocol for Git operations
+### Advantages of using HTTPS protocol for Git operations
 
 HTTPS protocol provides the following advantages when used during git operations:
 
 **Easy to Use**: HTTPS is easy to use. It was the main reason GitHub recommended it in the first place. To use HTTPS, the user has to copy the URL and run the git clone command to clone the repository. It is more comfortable and convenient to utilize for a user.
+
+### Disadvantages of Using HTTPS Protocol For Git Operations
+
+HTTPS protocol has the following disadvantages when used during git operations:
+
+- **Repetitive Authentication**: Whenever the user performs the network-based communication of any type such as pushing the changes to the repository or pulling the changes, every time they need to enter the credentials to authenticate their actions. 
