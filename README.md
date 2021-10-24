@@ -22,9 +22,16 @@ Python 3.7.10, pgAdmin 4
   - Store dataframes in a database (postgres).
   - Create dashboard to request and visualize data.    
 
+
 # Github will be Team_Cautious_Waffles version control.
 
 This repository will be hosted on Github and will need to be able to read/write between team members.
 *	standard HTTPS ports and can using HTTP authentication mechanisms, things like username/password authentication rather than having to set up SSH keys.
 
 * URL based protocol will be used to clone, access, push over Git
+
+# Advantages of using HTTPS protocol for Git operations
+
+HTTPS protocol provides the following advantages when used during git operations:
+
+**Easy to Use**: HTTPS is easy to use. It was the main reason GitHub recommended it in the first place. To use HTTPS, the user has to copy the URL and run the git clone command to clone the repository. It is more comfortable and convenient to utilize for a user.
