@@ -6,10 +6,10 @@ We will be using a multiple linear regression model in order to predict a player
 
 Listed below is the initial set of variables we will be using for each position we are predicting their stats for
 
-QB: completions, passing attempts, passing yards, passing touchdowns, quarterback rating, interceptions, times sacked, fumbles lost
-RB: rush attempts, rushing yards, rushing touchdowns, receptions, receiving yards, receiving touchdowns, fumbles lost
-WR: targets, receptions, receiving yards, receiving touchdowns, longest reception, fumbles lost
-TE: targets, receptions, receiving yards, receiving touchdowns, longest reception, fumbles lost
+- QB: completions, passing attempts, passing yards, passing touchdowns, quarterback rating, interceptions, times sacked, fumbles lost
+- RB: rush attempts, rushing yards, rushing touchdowns, receptions, receiving yards, receiving touchdowns, fumbles lost
+- WR: targets, receptions, receiving yards, receiving touchdowns, longest reception, fumbles lost
+- TE: targets, receptions, receiving yards, receiving touchdowns, longest reception, fumbles lost
  
 We chose a multiple linear regression model due to the abundance of statistics available to use for training our model and the fact that we are attempting to predict a continuous variable (stats/fantasy points). 
 
