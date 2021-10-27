@@ -1,4 +1,4 @@
-function GetData() {https://github.com/sbull32/team_cautious_waffle/blob/JTbranch/home2_df.csv
+function Data() {https://github.com/sbull32/team_cautious_waffle/blob/JTbranch/home2_df.csv
     jQuery.ajax({
         url: "https://github.com/sbull32/team_cautious_waffle/blob/JTbranch/home2_df.csv",
         type: 'get',
@@ -25,3 +25,6 @@ function GetData() {https://github.com/sbull32/team_cautious_waffle/blob/JTbranc
         }
     });
   }
+
+// Attempting to find an intuitive way to utilize a JS query system to automatically pull data from one of the branches in our github to autopopulate the data on our html in a
+// searchable/filterable dataset
