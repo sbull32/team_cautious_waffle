@@ -1,16 +1,29 @@
-CREATE TABLE offense (
-  player_id TEXT PRIMARY KEY NOT NULL,
-  passing_touchdowns INTEGER,
+CREATE TABLE nfl2020 (
+  name TEXT,
+  completed_passes INTEGER,
+  attempted_passes INTEGER,
   passing_yards INTEGER,
+  passing_touchdowns INTEGER,
   interceptions_thrown INTEGER,
-  rush_touchdowns INTEGER,
+  times_sacked INTEGER,
+  yards_lost_from_sacks INTEGER,
+  longest_pass INTEGER,
+  quarterback_rating FLOAT,
+  rush_attempts INTEGER,	
   rush_yards INTEGER,
-  receiving_touchdowns INTEGER,
-  receiving_yards INTEGER,
+  rush_touchdowns INTEGER,
+  longest_rush INTEGER,
+  times_pass_target INTEGER,
   receptions INTEGER,
+  receiving_yards INTEGER,
+  receiving_touchdowns INTEGER,
+  longest_reception INTEGER,
+  fumbles INTEGER,
+  fumbles_lost INTEGER,
+  fumbles_recovered_for_touchdown INTEGER,
+  kickoff_return_touchdown INTEGER,	
   punt_return_touchdown INTEGER,
-  fumbles_recovered_for_touchdown INTEGER,	
-  kickoff_return_touchdown INTEGER,
-  fumbles_lost INTEGER	
+  position TEXT,
+  fantasy_points FLOAT
 );
 
