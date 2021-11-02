@@ -64,4 +64,16 @@ INTO nfl2020final
 FROM nfl2020 as nfl
 LEFT JOIN nfl2020team as team
 ON nfl.name = team.name;
-	
+
+-- Remove players (10) with the team designation of '2TM'
+SELECT
+	COUNT (team)
+FROM 
+	nfl2020final
+GROUP BY
+	team
+HAVING
+	team = '2TM';
+
+DELETE FROM nfl2020final
+WHERE team = '2TM';
