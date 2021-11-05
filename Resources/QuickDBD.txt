@@ -1,0 +1,63 @@
+nfl2020
+-
+name text pk fk >-< nfl2020team.name
+completed_passes int
+attempted_passes int
+passing_yards int
+passing_touchdowns int
+interceptions_thrown int
+times_sacked int
+yards_lost_from_sacks int
+longest_pass int
+quarterback_rating float
+rush_attempts int
+rush_yards int
+rush_touchdowns int
+longest_rush int
+times_pass_target int
+receptions int
+receiving_yards int
+receiving_touchdowns int
+longest_reception int
+fumbles int
+fumbles_lost int
+fumbles_recovered_for_touchdown int
+kickoff_return_touchdown int
+punt_return_touchdown int
+position text
+fantasy_points float
+
+nfl2020team
+-
+name text pk fk
+team text fk >-< nfl2020final.team
+
+nfl2020final
+-
+name text pk fk >-< nfl2020team.name
+completed_passes int
+attempted_passes int
+passing_yards int
+passing_touchdowns int
+interceptions_thrown int
+times_sacked int
+yards_lost_from_sacks int
+longest_pass int
+quarterback_rating float
+rush_attempts int
+rush_yards int
+rush_touchdowns int
+longest_rush int
+times_pass_target int
+receptions int
+receiving_yards int
+receiving_touchdowns int
+longest_reception int
+fumbles int
+fumbles_lost int
+fumbles_recovered_for_touchdown int
+kickoff_return_touchdown int
+punt_return_touchdown int
+position text
+fantasy_points float
+team text
