@@ -1,0 +1,6 @@
+## Tasks at hand
+The task at hand right now is to merge a current index with my own, and figure out how to make sure that heroku connects perfectly with the app. Currently I plan on using the app to display the exported data frames that we have from our machine learning model and utilize the Matplotlib graphics that are in the model on the website. Tasks that need to happen: successfully connect to heroku profile from our GitHub, utilize that information in our app.js file to display tables, debug any connection issues.
+## Issues
+Connection Issues are occuring right now
+## Moving Forward
+Plan is to keep trying to figure out connection problem, and plan on meeting with TAs before class on Tuesday.
