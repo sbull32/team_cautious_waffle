@@ -104,7 +104,7 @@ def data():
     # Create our session (link) from Python to the DB
     session = Session(engine)
     
-    Query Database. Check SqlAlchemy documentation for how to query
+    #Query Database. Check SqlAlchemy documentation for how to query
     
     #Convert your query object into a list or dictionary format so it can
     # be jsonified
