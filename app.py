@@ -31,8 +31,7 @@ url = os.getenv('DATABASE_URL')
 
 
 #uncomment line below when you want to deploy to heroku
-url = os.environ.get("
-https://git.heroku.com/app-cautiouswaffle.git")
+#url = os.environ.get("URL")
 
 
 engine = create_engine(f'{url}')
