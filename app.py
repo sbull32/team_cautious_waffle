@@ -52,7 +52,7 @@ app = Flask(__name__)
 
 
 #Line below will load your machine learning model
-model = joblib.load("<filepath to saved model>")
+model = joblib.load("..\capstone\Resources\mlenv_model")
 
 
 
