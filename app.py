@@ -31,7 +31,7 @@ url = os.getenv('URL')
 
 
 #uncomment line below when you want to deploy to heroku
-#url = os.environ.get("URL")
+url = os.environ.get("URL")
 
 
 engine = create_engine(f'{url}')
@@ -45,13 +45,39 @@ Base.prepare(engine, reflect=True)
 
 # Save reference to the table
 Tablename = Base.classes.tablename
-
+FootballData = Base.classes.App-CautiousWaffle
 # create instance of Flask app
 app = Flask(__name__)
 
+FantasyData = session.query(FootballData).all()
+    myData = []
 
+for x in FantasyData:
+
+        fullFantasyData = {}
+
+        fullFantasyData = {
+            "Week": x.week_id,
+            "Team":x.team_id,
+            "Player Name":x.player_name,
+            "Position":x.position,
+            "Current Points Required":x.current_points,
+            "Passing Touchdowns":x.passing_touchdowns,
+            "Passing Yards":x.passing_yards,
+            "Interceptions Thrown":x.interceptions_thrown,
+            "Rush Touchdowns":x.rush_touchdowns,
+            "Rush Yards":x.rush_yards,
+            "Receiving Touchdowns":x.receiving_touchdowns,
+            "Receiving Yards":x.receiving_yards,
+            "Receptions":x.receptions,
+            "Punt Return Touchdowns":x.punt_return_touchdown
+            "Fumbles Recovered For Touchdowns":x.fumbles_recovered_for_touchdown,
+            "Kickoff Return Touchdowns":x.kickoff_return_touchdown,
+        }
+
+        myData.append(fullFantasyData)
 #Line below will load your machine learning model
-model = joblib.load("..\capstone\Resources\mlenv_model")
+#model = joblib.load("<filepath to saved model>")
 
 
 
@@ -101,7 +127,7 @@ def data():
     
     
     # Create our session (link) from Python to the DB
-    session = Session(engine)
+    #session = Session(engine)
     
     #Query Database. Check SqlAlchemy documentation for how to query
     
@@ -109,7 +135,7 @@ def data():
     # be jsonified
     
         
-    session.close()
+    #session.close()
     
     #Return the JSON representation of your dictionary
     return ('jsonify(myData)')
