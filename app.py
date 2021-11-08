@@ -31,27 +31,28 @@ url = os.getenv('DATABASE_URL')
 
 
 #uncomment line below when you want to deploy to heroku
-#url = os.environ.get("URL")
+url = os.environ.get("
+https://git.heroku.com/app-cautiouswaffle.git")
 
 
-#engine = create_engine(f'{url}')
+engine = create_engine(f'{url}')
 
 
 # reflect an existing database into a new model
-#Base = automap_base()
+Base = automap_base()
 
 # reflect the tables
-#Base.prepare(engine, reflect=True)
+Base.prepare(engine, reflect=True)
 
 # Save reference to the table
-#Tablename = Base.classes.tablename
+Tablename = Base.classes.tablename
 
 # create instance of Flask app
 app = Flask(__name__)
 
 
 #Line below will load your machine learning model
-#model = joblib.load("<filepath to saved model>")
+model = joblib.load("<filepath to saved model>")
 
 
 
@@ -101,15 +102,15 @@ def data():
     
     
     # Create our session (link) from Python to the DB
-    #session = Session(engine)
+    session = Session(engine)
     
-    #Query Database. Check SqlAlchemy documentation for how to query
+    Query Database. Check SqlAlchemy documentation for how to query
     
     #Convert your query object into a list or dictionary format so it can
     # be jsonified
     
         
-    #session.close()
+    session.close()
     
     #Return the JSON representation of your dictionary
     return ('jsonify(myData)')
