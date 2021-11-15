@@ -48,115 +48,96 @@
           </div>
         </div>
       </div>
-
-    
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="filters">
-            <form class="bg-dark">
-              <div class="form-group">
-                  <p>Filter Search</p>
-                  <ul class="list-group">
-                    <li class="list-group-item bg-dark">
-                      <label for="state">Enter Week</label>
-                      <input type="text" placeholder="Enter Week" id="week_id" />
-                    </li>
-                    <li class="list-group-item bg-dark">
-                        <label for="date">Enter Team</label>
-                        <input type="text" placeholder="Enter NFL Team" id="team_id" />
-                      </li>
-                    <li class="list-group-item bg-dark">
-                        <label for="city">Enter Player Name</label>
-                        <input type="text" placeholder="Enter Player Name" id="player_name" />
-                      </li>
-                    <li class="list-group-item bg-dark">
-                        <label for="country">Enter Position</label>
-                        <input type="text" placeholder="Country" id="country" />
-                      </li>
-                    <li class="list-group-item bg-dark">
-                        <label for="shape">Enter Current Points Required</label>
-                        <input type="text" placeholder="Enter Points Amount" id="current_points" />
-                      </li>
-                    <li class="list-group-item bg-dark">
-                        <label for="shape">Enter Passing Touchdowns</label>
-                        <input type="text" placeholder="Passing Touchdowns" id="passing_touchdowns" />
-                    </li>
-                    <li class="list-group-item bg-dark">
-                        <label for="shape">Enter Passing Yards</label>
-                        <input type="text" placeholder="Passing Yards" id="passing_yards" />
-                      </li>
-                    <li class="list-group-item bg-dark">
-                        <label for="shape">Enter Interceptions Thrown</label>
-                        <input type="text" placeholder="Interceptions Thrown" id="interceptions_thrown" />
-                    </li><li class="list-group-item bg-dark">
-                        <label for="shape">Enter Rush Touchdowns</label>
-                        <input type="text" placeholder="Rush Touchdowns" id="rush_touchdowns" />
-                      </li>
-                    <li class="list-group-item bg-dark">
-                        <label for="shape">Enter Rush Yards</label>
-                        <input type="text" placeholder="Rush Yards" id="rush_yards" />
-                    </li>
-                    <li class="list-group-item bg-dark">
-                        <label for="shape">Enter Receiving Touchdowns</label>
-                        <input type="text" placeholder="Receiving Touchdowns" id="receiving_touchdowns" />
-                      </li>
-                    <li class="list-group-item bg-dark">
-                        <label for="shape">Enter Receiving Yards</label>
-                        <input type="text" placeholder="Receiving Yards" id="receiving_yards" />
-                      </li>
-                    <li class="list-group-item bg-dark">
-                        <label for="shape">Enter Receptions</label>
-                        <input type="text" placeholder="Receptions" id="receptions" />
-                      </li>
-                    <li class="list-group-item bg-dark">
-                        <label for="shape">Enter Punt Return Touchdowns</label>
-                        <input type="text" placeholder="Punt Return Touchdowns" id="punt_return_touchdown" />
-                      </li>
-                    <li class="list-group-item bg-dark">
-                        <label for="shape">Enter Fumbles Recovered For Touchdowns</label>
-                        <input type="text" placeholder="Fumbles Recovered For Touchdowns" id="fumbles_recovered_for_touchdown" />
-                      </li>
-                    <li class="list-group-item bg-dark">
-                        <label for="shape">Enter Kickoff Return Touchdowns</label>
-                        <input type="text" placeholder="Kickoff Return Touchdowns" id="kickoff_return_touchdown" />
-                      </li>
-                    </ul>
-                  </div>
-                </form>
-              </div>
+        <div id= "question-container" class="container-fluid main_background">
+        <div class="row" id='machine-learning-row'>
+            <div id="form-col" class="col-sm-6 d-flex justify-content-center">
+                <form class='row flex-row justify-content-center' method="post">
+                    <div class="col-3 form-group">
+                        <label for="exampleDataList" class="form-label">Name</label>
+                        <input class="form-control" list="datalistOptions" id="exampleDataList" name='dropdown'>
+                            <datalist id="datalistOptions">
+                              <option value = "A.J. Brown">
+                              <option value = "A.J. Green">
+                              <option value = "A.J. McCarron">
+                              <option value ='Aaron Jones'>
+                              <option value = 'Aaron Rodgers'>
+                              <option value = "Adam Humphries">
+                              <option value = "A.J. McCarron">
+                              <option value ='Aaron Jones'> 
+                            </datalist>
+                        </input>
+                    </div>
+                    <div class="col-3 form-group">
+                        <label for="PositionList" class="form-label">Position</label>
+                        <input class="form-control" list="datalistOptions2" id="PositionList" name='dropdown2'>
+                            <datalist id="datalistOptions2">
+                                <option value="QB">
+                                <option value="RB">
+                                <option value="TE">
+                                <option value="WR">
+                            </datalist>
+                        </input>
+                    </div>
+                    <div class="col-4 form-group">
+                        <label for="TeamList" class="form-label">Team Name</label>
+                        <input class="form-control" list="datalistOptions3" id="TeamList" name='dropdown3'>
+                            <datalist id="datalistOptions3">
+                              <option value="2TM">
+                                <option value="ARI">
+                                <option value="ATL">
+                                <option value="BAL">
+                                <option value="BUF">
+                                <option value="CAR">
+                                <option value="CHI">
+                                <option value="CIN">
+                                <option value="CLE">
+                                <option value="DAL">
+                                <option value="DEN">
+                                <option value="DET">
+                                <option value="GNB">
+                                <option value="HOU">
+                                <option value="IND">
+                                <option value="JAX">
+                                <option value="KAN">
+                                <option value="LAC">
+                                <option value="LAR">
+                                <option value="LVR">
+                                <option value="MIA">
+                                <option value="NOR">
+                                <option value="NWE">
+                                <option value="NYG">
+                                <option value="NYJ">
+                                <option value="PHI">
+                                <option value="PIT">
+                                <option value="SEA">
+                                <option value="SFO">
+                                <option value="TAM">
+                                <option value="TEN">
+                                <option value="WAS">
+                            </datalist>
+                        </input>
+                    </div>
+                    <div class="col-sm-12 d-flex justify-content-end align-items-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form> 
             </div>
-        
-        <div class="col-md-9">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                
-                    <th>Week</th>
-                    <th>Team</th>
-                    <th>Player Name</th>
-                    <th>Position</th>
-                    <th>Current Points</th>
-                    <th>Passing Touchdowns</th>
-                    <th>Passing Yards</th>
-                    <th>Interceptions Thrown</th>
-                    <th>Rush Touchdowns</th>
-                    <th>Rush Yards</th>
-                    <th>Receiving Touchdowns</th>
-                    <th>Receptions</th>
-                    <th>Punt Return Touchdowns</th>
-                    <th>Kickoff Return Touchdowns</th>
-                    <th>Forecasted Points</th>
-                
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
+            <div class='col-sm-4 d-flex align-items-center justify-content-start'>
+                <div class='row'>
+                    <div class = 'col-sm-12 d-flex justify-content-start align-items-center' id='machine-learning-label'>
+                        <h5>Fantasy Points Predicted</h5>
+                    </div>
+                    <div class = 'col-sm-10 d-flex border border-dark justify-content-center align-items-center' id='machine-learning-output'>
+                        {{outcome}}
+                    </div>
+                </div>
+            </div> 
+        </div>
+      </div>
       </div>
     </div>
   </div>
-        <script src="js/data.js"></script>
+        <script src="C:\Users\Nic\Desktop\DU Data Analysis Projects\capstone\app_template-main\app_template-main\app.js"></script>
         <script src="js/model.js"></script> 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
