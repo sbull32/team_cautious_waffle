@@ -2,15 +2,15 @@
 import joblib  #for importing your machine learning model
 from flask import Flask, render_template, request, jsonify, make_response
 import pandas as pd 
+import plotly.graph_objects as go
 
 
-
-# SQLALCHEMY SETUP
-import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
-import psycopg2
+# # SQLALCHEMY SETUP
+# import sqlalchemy
+# from sqlalchemy.ext.automap import automap_base
+# from sqlalchemy.orm import Session
+# from sqlalchemy import create_engine, func
+# import psycopg2
 
 #os allows you to call in environment variables
 # we will set the remote environment variables in heroku 
@@ -27,118 +27,109 @@ load_dotenv()
 #make sure you have your own .env on your computer
 #comment out when you plan to deploy from heroku
 
-url = os.getenv('URL')
+# url = os.getenv('postgres://postgres:Butt3rcup@localhost:5432/app-local')
+# # postgresql://postgres:Butt3rcup@localhost/app-local
+# # postgres://postgres:Butt3rcup@localhost:5432/app-local
+# # #uncomment line below when you want to deploy to heroku
+# # # url = os.environ.get("URL")
 
 
-#uncomment line below when you want to deploy to heroku
-url = os.environ.get("URL")
+# engine = create_engine(f'{url}')
 
 
-engine = create_engine(f'{url}')
+# # # reflect an existing database into a new model
+# Base = automap_base()
 
+# # # reflect the tables
+# Base.prepare(engine, reflect=True)
 
-# reflect an existing database into a new model
-Base = automap_base()
+# # # Save reference to the table
+# FantasyData = Base.classes.nfl2020final
+# # create instance of Flask app
+# app = Flask(__name__)
 
-# reflect the tables
-Base.prepare(engine, reflect=True)
+# FantasyData = session.query(Player_Stats).all()
+# myData = []
 
-# Save reference to the table
-Tablename = Base.classes.tablename
-FootballData = Base.classes.App-CautiousWaffle
-# create instance of Flask app
-app = Flask(__name__)
+# for x in FantasyData:
 
-FantasyData = session.query(FootballData).all()
-    myData = []
+#         fullFantasyData = {}
 
-for x in FantasyData:
+#         fullFantasyData = {
+#             # "Week": x.week_id,
+#             # "Team":x.team,
+#             "Player Name":x.name_,
+#             "Position":x.position,
+#             "Current Points":x.fantasy_points,
+#             # "Passing Touchdowns":x.passing_touchdowns,
+#             # "Passing Yards":x.passing_yards,
+#             # "Interceptions Thrown":x.interceptions_thrown,
+#             # "Rush Touchdowns":x.rush_touchdowns,
+#             # "Rush Yards":x.rush_yards,
+#             # "Receiving Touchdowns":x.receiving_touchdowns,
+#             # "Receiving Yards":x.receiving_yards,
+#             # "Receptions":x.receptions,
+#             # "Punt Return Touchdowns":x.punt_return_touchdown
+#             # "Fumbles Recovered For Touchdowns":x.fumbles_recovered_for_touchdown,
+#             # "Kickoff Return Touchdowns":x.kickoff_return_touchdown,
+#         }
 
-        fullFantasyData = {}
-
-        fullFantasyData = {
-            "Week": x.week_id,
-            "Team":x.team_id,
-            "Player Name":x.player_name,
-            "Position":x.position,
-            "Current Points Required":x.current_points,
-            "Passing Touchdowns":x.passing_touchdowns,
-            "Passing Yards":x.passing_yards,
-            "Interceptions Thrown":x.interceptions_thrown,
-            "Rush Touchdowns":x.rush_touchdowns,
-            "Rush Yards":x.rush_yards,
-            "Receiving Touchdowns":x.receiving_touchdowns,
-            "Receiving Yards":x.receiving_yards,
-            "Receptions":x.receptions,
-            "Punt Return Touchdowns":x.punt_return_touchdown
-            "Fumbles Recovered For Touchdowns":x.fumbles_recovered_for_touchdown,
-            "Kickoff Return Touchdowns":x.kickoff_return_touchdown,
-        }
-
-        myData.append(fullFantasyData)
-#Line below will load your machine learning model
-#model = joblib.load("<filepath to saved model>")
+#         myData.append(fullFantasyData)
+# #Line below will load your machine learning model
+# #model = joblib.load("<filepath to saved model>")
 
 
 
 # create route that renders index.html template
 @app.route("/", methods=["GET","POST"])
 def home():
-    
+    outcome = 'Predicted Fantasy Points' 
     #If you have the user submit a form
     if request.method == 'POST': 
         
         #get the contents of the input field. This is referenced by the name argument
         #in the input html
-        input_1 = request.form.get("dropdown")
-        print(input_1)
-        input_2 = request.form.get("dropdown2")
-        
+        Name = request.form.get("dropdown")
+        print(Name)
+        Position = request.form.get("dropdown2")
+        print(Position)
+        Team = request.form.get("dropdown3")
+        print(Team)
         #all forms return a string, if you want your input to convert to numeric check
         #that the input is numeric and then convert. Skip if you need string inputs for your model
-        if input_1.isnumeric():
-            
-            #convert to integer
-            variable_1 = int(input_1)
-            variable_2 = int(input_2)
-
-            #plug your inputs into the model you loaded. In this case my model just
-            #adds the variables and multiplies. Your model is your machine learning model.
-            outcome = (variable_1+variable_2)*2 #model(input_1,input_2)
-        
+        query = f"select fantasy_points from nfl_2020_final where name_ = {Name} and position_ {Position} and team = {Team}"
+        # FantasyData = session.query(Player_Stats).all()
         #This ensures that if a non numeric input is passed, nothing happens
-        else:
-            outcome = 'What Will Your Value Be?' 
-        
-        return render_template("index.html", outcome=outcome)
-    
-    #if you are not recieving form data from a user, for instance when the pager first loads
-    #this is what happens. 
-    else:
-        outcome = 'What Will Your Value Be?' 
-         
-        return render_template("index.html", outcome=outcome)
-
-
-#make an endpoint for data you are using in charts. You will use JS to call this data in
-#using d3.json("/api/data")
-@app.route("/api/data")
-def data():
-    
-    
-    # Create our session (link) from Python to the DB
-    #session = Session(engine)
-    
-    #Query Database. Check SqlAlchemy documentation for how to query
-    
-    #Convert your query object into a list or dictionary format so it can
-    # be jsonified
-    
-        
-    #session.close()
-    
-    #Return the JSON representation of your dictionary
-    return ('jsonify(myData)')
+        outcome = query
+    return render_template("index.html", outcome=outcome)
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+fig = go.Figure(go.Indicator(
+    mode = "gauge+number+delta",
+    value = 420,
+    domain = {'x': [0, 1], 'y': [0, 1]},
+    title = {'text': "Is this a viable pick?", 'font': {'size': 36}},
+    delta = {'reference': 400, 'increasing': {'color': "RebeccaPurple"}},
+    gauge = {
+        'axis': {'range': [None, 0], 'tickwidth': 1, 'tickcolor': "darkblue"},
+        'bar': {'color': "darkblue"},
+        'bgcolor': "white",
+        'borderwidth': 2,
+        'bordercolor': "gray",
+        'steps': [
+            {'range': [0, 5], 'color': 'Red'},
+            {'range': [5, 10], 'color': 'Yellow'},
+            {'range': [10, 30], 'color': 'lightgreen'},
+            {'range': [30, 600], 'color': 'green'}],
+        'threshold': {
+            'line': {'color': "red", 'width': 4},
+            'thickness': 0.75,
+            'value': 490}}))
+
+fig.update_layout(paper_bgcolor = "lavender", font = {'color': "darkblue", 'family': "Arial"})
+
+fig.show()
