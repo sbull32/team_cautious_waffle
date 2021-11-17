@@ -1,0 +1,28 @@
+body {
+    color: #000000;
+    background-image: url(https://i.pinimg.com/originals/79/ea/e6/79eae60f1e4b247c88219f8caae89a42.jpg);
+  }
+  
+  .jumbotron {
+    background-image: url(https://i.pinimg.com/originals/75/28/38/75283802e5909ef74703494c385b3528.jpg);
+    background-size: 100% 100%;
+    text-align: center;
+  }
+  
+  .article-title, .article-p {
+    padding: 20px;
+  }
+  form {
+    padding: 5px;
+  }
+  
+  #filter-btn {
+    width: 100%;
+  }
+
+.jumbotron h1{
+    color: rgb(32, 152, 221);
+}
+p.indent {
+    text-indent: 10px;
+}
