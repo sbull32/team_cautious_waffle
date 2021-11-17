@@ -60,4 +60,3 @@ We originally thought we would use the data from 2020 in order to predict stats 
 So far we have used the linear regression model on the entire dataframe to see how well last years stats in the aforementioned categories affected their fantasy points as well as a random forest classifier for each of the different positional dataframes to determine which features carried the most weight based on the players position.
 
 In addition to what we currently have trained, we plan on doing more in depth analysis on the models for each specific position to see what else we can uncover given the data we have. We also plan on using various methods to help visualize the data better.
-
