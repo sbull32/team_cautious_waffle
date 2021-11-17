@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Fantasy Football Machine Learning Model</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+    <body class="bg-dark">
+        <div class="wrapper">
+                <nav class="navbar navbar-expand-lg">
+                   <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+                    <a class="navbar-brand" href="index.html">Final Project</a>
+                  </nav>
+            </nav>
+        </div>
+
+        <div class="jumbotron">
+          <h1 class="display-4">Fantasy Sports Lineup Predictions</h1>
+        </div>
+
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+            <h3>Contributors <small>Jabari Tucker, Alex Guenther, Sean Bull, Taryn Syler, and Nic Brownrigg</small></h3>
+          </div>
+          <div>
+            <h3>
+            Methodology
+            </h3>
+          </div>
+          <div class="col-md-8">
+            <p>
+             *PLACEHOLDER* 
+
+
+            </p>
+          </div>
+        </div>
+      </div>
+        <div id= "question-container" class="container-fluid main_background">
+        <div class="row" id='machine-learning-row'>
+            <div id="form-col" class="col-sm-6 d-flex justify-content-center">
+                <form class='row flex-row justify-content-center' method="post">
+                    <div class="col-3 form-group">
+                        <label for="exampleDataList" class="form-label">Name</label>
+                        <input class="form-control" list="datalistOptions" id="PlayerList" name='name_dropdown'>
+                            <datalist id="datalistOptions">
+                              <option value = "A.J. Brown">
+                              <option value = "A.J. Green">
+                              <option value = "A.J. McCarron">
+                              <option value ='Aaron Jones'>
+                              <option value = 'Aaron Rodgers'>
+                              <option value = "Adam Humphries">
+                              <option value = "A.J. McCarron">
+                              <option value ='Aaron Jones'> 
+                            </datalist>
+                        </input>
+                    </div>
+                    <div class="col-3 form-group">
+                        <label for="PositionList" class="form-label">Position</label>
+                        <input class="form-control" list="datalistOptions2" id="PositionList" name='position_dropdown'>
+                            <datalist id="datalistOptions2">
+                                <option value="QB">
+                                <option value="RB">
+                                <option value="TE">
+                                <option value="WR">
+                            </datalist>
+                        </input>
+                    </div>
+                    <div class="col-4 form-group">
+                        <label for="TeamList" class="form-label">Team Name</label>
+                        <input class="form-control" list="datalistOptions3" id="TeamList" name='team_dropdown'>
+                            <datalist id="datalistOptions3">
+                              <option value="2TM">
+                                <option value="Arizona Cardinals">
+                                <option value="Atlanta Falcons">
+                                <option value="Baltimore Ravens">
+                                <option value="Buffalo Bills">
+                                <option value="Carolina Panthers">
+                                <option value="Chicago Bears">
+                                <option value="Cincinnati Bengals">
+                                <option value="Cleveland Browns">
+                                <option value="Dallas Cowboys">
+                                <option value="Denver Broncos">
+                                <option value="Detroit Lions">
+                                <option value="Green Bay Packers">
+                                <option value="Houston Texans">
+                                <option value="Indianapolis Colts">
+                                <option value="Jacksonville Jaguars">
+                                <option value="Kansas City Chiefs">
+                                <option value="Los Angeles Rams">
+                                <option value="Los Angeles Chargers">
+                                <option value="Las Vegas Raiders">
+                                <option value="Minnesota Vikings">
+                                <option value="New Orleans Saints">
+                                <option value="New England Patriots">
+                                <option value="New York Giants">
+                                <option value="New York Jets">
+                                <option value="Miami Dolphins">
+                                <option value="Philadelphia Eagles">
+                                <option value="Pittsburgh Steelers">
+                                <option value="Seattle Seahawks">
+                                <option value="San Francisco 49ers">
+                                <option value="Tampa Bay Buccaneers">
+                                <option value="Tennessee Titans">
+                                <option value="Washington Football Team">
+                            </datalist>
+                        </input>
+                    </div>
+                    <div class="col-sm-12 d-flex justify-content-end align-items-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form> 
+            </div>
+            <div class='col-sm-4 d-flex align-items-center justify-content-start'>
+                <div class='row'>
+                    <div class = 'col-sm-12 d-flex justify-content-start align-items-center' id='machine-learning-label'>
+                        <h5>Fantasy Points Predicted</h5>
+                    </div>
+                    <div class = 'col-sm-10 d-flex border border-dark justify-content-center align-items-center' id='machine-learning-output'>
+                        {{outcome}}
+                    </div>
+                </div>
+            </div> 
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+        <script src="js/app.js"></script>
+        <script src="js/data.js"></script> 
+</body>
+</html>
