@@ -11,7 +11,7 @@ Python 3.7.10, pgAdmin 4
 - Data transformation:
   - Performed list comprehensions to iterate through box scores of every NFL game during the 2020 season.
   - Appended box scores and created dataframe with features to be used in the machine learning model.
-  - Web scraped player position and team from www.sports-reference.com directly.
+  - Web scraped player position and team from [Sports Reference](https://www.sports-reference.com) directly.
   - Appended player position to the dataframe in order to filter out defensive players.
   - Calculated fantasy points (target variable) accrued, for each player each week in the 2020 season, and appended to the dataframe.
 - Data loading:
