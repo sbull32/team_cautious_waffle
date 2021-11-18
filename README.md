@@ -1,46 +1,22 @@
-# Daily Fantasy Sports Roster Optimizer
+# Fantasy Football Predictor
 
 ## Overview
-This project is tasked with utilizing a machine learning model (initial thoughts would be a supervised linear regression model) to create daily fantasy roster(s) that would "win" on a consistent basis in daily fantasy sports competitions.  The target variable is the amount of fantasy points.  There are two types of games within daily fantasy sports:
-
-- Cash games - around 50 percent of the participants win the same prize and don’t require a top score to win.
-- Guaranteed prize pool (GPP) games - 20 percent or fewer of the lineups win money, with the top finishers getting a big percentage of the winnings while that percentage drops quickly as you go down the list of winners.
-
-This model is aimed at constructing an optimal lineup to compete in cash games.  Furthermore, there are a variety of sports to compete in along with a variety of sites to utilize.  This project centers on fantasy football, using the DraftKings site, and utilizing the rules concerning classic roster construction.  The rules can be found at [NFL Classic Rules and Scoring](https://www.draftkings.com/help/rules/1/1). 
+This project is tasked with utilizing a machine learning model (multiple linear regression) to predict the amount of fantasy points NFL players would accure. This model can then be used to build optimal rosters in fantasy football competitions.  There are a variety of sites to utilize to calculate fantasy points. This project utilizes the DraftKings site, which the rules can be found at  [NFL Classic Rules and Scoring](https://www.draftkings.com/help/rules/1/1). 
 
 ## Software
 Python 3.7.10, pgAdmin 4
 
-## Procedure(tentative)
-- Data selection from [Sportsipy](https://github.com/roclark/sportsipy).
-- Data processing:
-  - Segregate raw NFL data by week, by player, by position in columns that align with DraftKings scoring (features).
-  - Apply machine learing model to predict NFL data for each eligible NFL player.
-  - Convert raw NFL data into fantasy points.
-  - Utilizing DraftKings roster requirements, calculate an optimal lineup for a given week (the Excel Sovler tool can be used as an example).
+## ETL Process
+- Data extraction from [Sportsipy](https://github.com/roclark/sportsipy), a python API that pulls stats from [Sports Reference](https://www.sports-reference.com).
 - Data transformation:
-  - Store dataframes in a database (postgres).
-  - Create dashboard to request and visualize data.    
-
-
-# Github will be Team_Cautious_Waffles version control.
-
-This repository will be hosted on Github and will need to be able to read/write between team members.
-*	standard HTTPS ports and can using HTTP authentication mechanisms, things like username/password authentication rather than having to set up SSH keys.
-
-* URL based protocol will be used to clone, access, push over Git
-
-### Advantages of using HTTP protocol for Git operations
-
-HTTPS protocol provides the following advantages when used during git operations:
-
-**Easy to Use**: HTTPS is easy to use. It was the main reason GitHub recommended it in the first place. To use HTTPS, the user has to copy the URL and run the git clone command to clone the repository. It is more comfortable and convenient to utilize for a user.
-
-### Disadvantages of Using HTTP Protocol For Git Operations
-
-HTTPS protocol has the following disadvantages when used during git operations:
-
-- **Repetitive Authentication**: Whenever the user performs the network-based communication of any type such as pushing the changes to the repository or pulling the changes, every time they need to enter the credentials to authenticate their actions. 
+  - Performed list comprehensions to iterate through box scores of every NFL game during the 2020 season.
+  - Appended box scores and created dataframe with features to be used in the machine learning model.
+  - Web scraped player position and team from www.sports-reference.com directly.
+  - Appended player position to the dataframe in order to filter out defensive players.
+  - Calculated fantasy points (target variable) accrued, for each player each week in the 2020 season, and appended to the dataframe.
+- Data loading:
+  - Imported box score dataframe and team dataframe into PostgresSQL database and performed a join between the two tables.
+  - Created connection between the PostgreSQL database and machine learning model. 
 
 ## Machine Learning Model
 
